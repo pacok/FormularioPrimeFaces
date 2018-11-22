@@ -49,8 +49,8 @@ public class LoginBean{
             
         }
         if(entra){
-            System.out.println("index.xhtml?faces-redirect=true");
-            return "index.xhtml?faces-redirect=true";
+            System.out.println("entra");
+            return "entra";
         }else{
             RequestContext.getCurrentInstance().update("growl");
             FacesContext context = FacesContext.getCurrentInstance();
