@@ -7,22 +7,27 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">    
     <h:head>
         <title>Login</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>       
     </h:head>
     <h:body>
-        <p:growl id="growl" sticky="true" showDetail="true"></p:growl>
-        <h:form>
-            <h:panelGrid columns="2" style="position: absolute; top: 250px; left: 500px;">
-                <f:facet name="header">Login Form</f:facet>
-                <h:outputText value=""></h:outputText>
-                <p:inputText value="#{loginBean.login}"></p:inputText>
-                <h:outputText value=""></h:outputText>
-                <p:password value="#{loginBean.password}"></p:password>
-                <f:facet name="footer">
-                <h:commandButton value="Login" action="#{loginBean.comprobar()}"></h:commandButton>
-                </f:facet>
-            </h:panelGrid>
-        </h:form>           
-
-    </h:body>
+        <p:growl id="mensajes" showDetail="true" life="2000" />
+        
+  <h:form>
+    <p:panel style="margin: 0 auto;width:400px;" header="Login">
+      <h:panelGrid columns="2" cellpadding="5">
+        <h:outputLabel for="username" value="Usuario:" />
+        <p:inputText value="#{loginBean.login}" id="username"
+           required="true" label="username" />
+        <h:outputLabel for="password" value="Clave:" />
+        <p:password value="#{loginBean.password}" id="password" required="true"
+           label="password" />
+        <f:facet name="footer">
+          <p:commandButton id="loginButton" value="Login"
+             action="#{loginBean.comprobar()}" update=":mensajes" />
+        </f:facet>
+      </h:panelGrid>
+    </p:panel>
+  </h:form>
+            
+</h:body>
 </html>
