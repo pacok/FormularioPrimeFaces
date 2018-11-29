@@ -1,5 +1,7 @@
 package com.formulario.model;
 
+import org.primefaces.model.UploadedFile;
+
 public class Usuario{
     
     private int id;
@@ -9,7 +11,8 @@ public class Usuario{
     private String login;
     private String password;
     private String cargo;
-    private String foto;
+    //private String foto;
+    private byte[] foto;
     private boolean activo; 
 
     public int getId() {
@@ -68,13 +71,13 @@ public class Usuario{
         this.cargo = cargo;
     }
 
-    public String getFoto() {
+    public byte[] getFoto() {
         return foto;
     }
 
-    public void setFoto(String foto) {
+    public void setFoto(byte[] foto) {
         this.foto = foto;
-    }
+    } 
 
     public boolean isActivo() {
         return activo;
